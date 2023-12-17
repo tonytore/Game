@@ -1,0 +1,76 @@
+[gd_scene load_steps=7 format=3 uid="uid://38a6rm300jyq"]
+
+[ext_resource type="Script" path="res://scene/player/player.gd" id="1_12bge"]
+[ext_resource type="Texture2D" uid="uid://2n5mfldwcme8" path="res://graphics/player/player.png" id="1_ahhum"]
+[ext_resource type="Texture2D" uid="uid://cfcdcsahx0xar" path="res://graphics/decals/white.png" id="3_jrlrn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wx2gw"]
+radius = 66.6875
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_doyp1"]
+lifetime_randomness = 0.2
+particle_flag_disable_z = true
+spread = 20.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 15000.0
+initial_velocity_max = 20000.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.3
+scale_max = 0.8
+color = Color(0.742914, 1, 0.999, 1)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_dg8oy"]
+polygon = PackedVector2Array(323.332, -338.334, 328.332, -333.335, 333.332, -333.335, 333.332, -333.335, 334.999, -323.335, 334.999, -323.335, 334.999, -303.335, 334.999, -303.335, 331.666, -296.668, 331.666, -296.668, 323.332, -296.668, 323.332, -296.668, 324.999, -285.001, 324.999, -285.001, 323.332, -281.668, 323.332, -281.668, 329.999, -266.668, 329.999, -266.668, 338.332, -250.001, 338.332, -250.001, 341.666, -235.001, 343.332, -230.001, 341.666, -218.335, 341.666, -218.335, 334.999, -205.001, 328.333, -205.001, 328.333, -205.001, 321.666, -200.001, 321.666, -200.001, 316.666, -198.334, 316.666, -198.334, 309.999, -190.001, 309.999, -190.001, 301.666, -190.001, 301.666, -190.001, 293.333, -183.334, 293.333, -183.334, 279.999, -181.668, 276.666, -181.668, 261.666, -183.334, 259.999, -185.001, 244.999, -191.668, 244.999, -191.668, 236.666, -206.668, 236.666, -206.668, 228.333, -226.667, 226.666, -231.667, 224.999, -246.667, 224.999, -246.667, 226.666, -268.334, 226.666, -268.334, 243.332, -281.668, 243.332, -281.668, 256.666, -293.334, 256.666, -293.334, 268.332, -311.668, 268.332, -311.668, 273.332, -320.001, 273.332, -320.001, 271.665, -328.334, 271.665, -328.334, 278.332, -335.001, 278.332, -335.001, 278.332, -345.001, 278.332, -345.001, 286.665, -351.668, 286.665, -351.668, 286.665, -361.668, 286.665, -361.668, 293.332, -370.001, 293.332, -370.001, 314.999, -371.668, 318.332, -365.001, 316.665, -360.001, 316.665, -360.001, 321.665, -360.001, 321.665, -360.001, 319.999, -348.334, 319.999, -348.334)
+
+[node name="Player" type="CharacterBody2D"]
+rotation = 1.5708
+scale = Vector2(0.6, 0.6)
+collision_mask = 31
+script = ExtResource("1_12bge")
+
+[node name="PlayerImage" type="Sprite2D" parent="."]
+position = Vector2(285.012, -276.669)
+rotation = 6.28319
+scale = Vector2(0.968153, 0.973799)
+texture = ExtResource("1_ahhum")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(283.333, -241.667)
+rotation = 3.14159
+shape = SubResource("CircleShape2D_wx2gw")
+
+[node name="LaserReloadTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="GrenadeReloadTimer" type="Timer" parent="."]
+
+[node name="LaserStartPosition" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="LaserStartPosition"]
+position = Vector2(293.333, -366.667)
+
+[node name="Marker2D2" type="Marker2D" parent="LaserStartPosition"]
+position = Vector2(301.667, -370)
+rotation = 1.5708
+
+[node name="Marker2D3" type="Marker2D" parent="LaserStartPosition"]
+position = Vector2(310, -368.333)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.6, 0.6)
+position_smoothing_enabled = true
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(303.332, -370.001)
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_doyp1")
+texture = ExtResource("3_jrlrn")
+one_shot = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_dg8oy")
+
+[connection signal="timeout" from="LaserReloadTimer" to="." method="_on_laser_reload_timer_timeout"]
+[connection signal="timeout" from="GrenadeReloadTimer" to="." method="_on_grenade_reload_timer_timeout"]

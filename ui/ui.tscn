@@ -38,9 +38,9 @@ expand_mode = 4
 
 [node name="GrenadeCounter" type="Control" parent="."]
 layout_mode = 3
-anchor_left = 0.07
-anchor_top = 0.861
-anchor_right = 0.083
+anchor_left = 0.071
+anchor_top = 0.86
+anchor_right = 0.081
 anchor_bottom = 1.0
 offset_right = 40.0
 grow_vertical = 0

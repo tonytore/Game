@@ -5,6 +5,9 @@ var laser_scene:PackedScene = preload("res://scene/projectile/laser.tscn")
 var grenade_scene:PackedScene = preload("res://scene/projectile/grenade.tscn")
 
 
+func _ready():
+	print(Global.laser_amount)
+
 func _on_player_laser(pos,direction):  
 	
 	# instance the laser
@@ -31,7 +34,7 @@ func _on_player_grenade(pos,direction):
 #	grenade.linear_velocity = Vector2.UP*grenade.speed
 	grenade.linear_velocity = direction*grenade.speed
 	$Projectile.add_child(grenade)
-
+	
 
 func _on_house_player_entered():
 	var tween = get_tree().create_tween()

@@ -33,6 +33,7 @@ func _on_player_grenade(pos,direction):
 #	grenade.linear_velocity = Vector2.UP*grenade.speed
 	grenade.linear_velocity = direction*grenade.speed
 	$Projectile.add_child(grenade)
+	$UI.update_grenade_text()
 	
 
 func _on_house_player_entered():

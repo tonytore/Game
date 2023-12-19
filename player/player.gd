@@ -31,7 +31,8 @@ func _physics_process(_delta):
 		var player_direction = (get_global_mouse_position() - position).normalized()
 		laser.emit(selected_marker.global_position,player_direction)
 		
-	if Input.is_action_pressed("secondary action") and can_grenade:
+	if Input.is_action_pressed("secondary action") and can_grenade and Global.grenade_amount > 0:
+		Global.grenade_amount-=1
 		var pos = $LaserStartPosition.get_children()[0].global_position
 		can_grenade = false
 		$GrenadeReloadTimer.start()

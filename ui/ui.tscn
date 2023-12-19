@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://bij3koqxdbyiv"]
+[gd_scene load_steps=7 format=3 uid="uid://bij3koqxdbyiv"]
 
 [ext_resource type="Theme" uid="uid://dm8jcv8sx5k7r" path="res://scene/ui/ui.tres" id="1_j0gjl"]
+[ext_resource type="Script" path="res://scene/ui/ui.gd" id="1_oi4jm"]
 [ext_resource type="Texture2D" uid="uid://bx608q6dmm31d" path="res://graphics/ui/bullet.png" id="2_c1lx1"]
 [ext_resource type="Texture2D" uid="uid://qvpnvhxqdj5t" path="res://graphics/ui/grenade.png" id="3_g1dvx"]
 [ext_resource type="Texture2D" uid="uid://cyf5fjmokmtck" path="res://graphics/ui/progress_bar/bg.png" id="4_rf0tu"]
 [ext_resource type="Texture2D" uid="uid://cbhixdcciw18s" path="res://graphics/ui/progress_bar/progress.png" id="5_o7tup"]
 
 [node name="UI" type="CanvasLayer"]
+script = ExtResource("1_oi4jm")
 
 [node name="LaserCounter" type="Control" parent="."]
 layout_mode = 3
@@ -26,6 +28,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="LaserCounter/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("1_j0gjl")
 text = "20"

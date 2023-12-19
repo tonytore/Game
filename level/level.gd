@@ -5,8 +5,7 @@ var laser_scene:PackedScene = preload("res://scene/projectile/laser.tscn")
 var grenade_scene:PackedScene = preload("res://scene/projectile/grenade.tscn")
 
 
-func _ready():
-	print(Global.laser_amount)
+
 
 func _on_player_laser(pos,direction):  
 	
@@ -25,7 +24,7 @@ func _on_player_laser(pos,direction):
 	
 	# add the instantiated laser to a node2D
 	$Projectile.add_child(laser)
-
+	$UI.update_laser_text()
 
 func _on_player_grenade(pos,direction):
 #	print('shoot grenade from level')

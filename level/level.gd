@@ -25,6 +25,7 @@ func _on_player_laser(pos,direction):
 	# add the instantiated laser to a node2D
 	$Projectile.add_child(laser)
 	$UI.update_laser_text()
+	
 
 func _on_player_grenade(pos,direction):
 #	print('shoot grenade from level')
@@ -34,7 +35,6 @@ func _on_player_grenade(pos,direction):
 	grenade.linear_velocity = direction*grenade.speed
 	$Projectile.add_child(grenade)
 	$UI.update_grenade_text()
-	
 
 func _on_house_player_entered():
 	var tween = get_tree().create_tween()

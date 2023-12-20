@@ -22,3 +22,4 @@ scale = Vector2(0.4, 0.4)
 
 [connection signal="grenade" from="Player" to="." method="_on_player_grenade"]
 [connection signal="laser" from="Player" to="." method="_on_player_laser"]
+[connection signal="update_stat" from="Player" to="." method="_on_player_update_stat"]

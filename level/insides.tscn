@@ -221,7 +221,6 @@ modulate = Color(1, 1, 1, 0.152941)
 position = Vector2(7130, 2336)
 scale = Vector2(5.36, 6.07595)
 texture = ExtResource("4_1k63r")
-metadata/_edit_lock_ = true
 
 [node name="Sprite2D2" type="Sprite2D" parent="Ground" index="3"]
 modulate = Color(1, 1, 1, 0.152941)
@@ -229,7 +228,6 @@ position = Vector2(2431.53, 1371.84)
 rotation = 1.5708
 scale = Vector2(6.4482, 11.4353)
 texture = ExtResource("4_1k63r")
-metadata/_edit_lock_ = true
 
 [node name="Player" parent="." index="2"]
 position = Vector2(7328, 2528)
@@ -248,27 +246,22 @@ visible = false
 modulate = Color(1, 1, 1, 0.368627)
 position = Vector2(8504, 2552)
 scale = Vector2(2, 2)
-metadata/_edit_lock_ = true
 
 [node name="FanAnimation2" parent="Light" index="1" instance=ExtResource("4_sa8x3")]
 position = Vector2(1752, 7912)
 scale = Vector2(2, 2)
-metadata/_edit_lock_ = true
 
 [node name="FanAnimation5" parent="Light" index="2" instance=ExtResource("4_sa8x3")]
 position = Vector2(32, 3472)
 scale = Vector2(2, 2)
-metadata/_edit_lock_ = true
 
 [node name="FanAnimation3" parent="Light" index="3" instance=ExtResource("4_sa8x3")]
 position = Vector2(2560, 1192)
 scale = Vector2(2, 2)
-metadata/_edit_lock_ = true
 
 [node name="FanAnimation4" parent="Light" index="4" instance=ExtResource("4_sa8x3")]
 position = Vector2(-4192, 2560)
 scale = Vector2(2, 2)
-metadata/_edit_lock_ = true
 
 [node name="WallLights" parent="Light" index="5" instance=ExtResource("6_x3k86")]
 position = Vector2(3424, 3288)

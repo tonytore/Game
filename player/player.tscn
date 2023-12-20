@@ -42,7 +42,7 @@ rotation = 3.14159
 shape = SubResource("CircleShape2D_wx2gw")
 
 [node name="LaserReloadTimer" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 0.5
 one_shot = true
 
 [node name="GrenadeReloadTimer" type="Timer" parent="."]

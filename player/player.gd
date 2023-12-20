@@ -53,5 +53,7 @@ func add_item(type)->void:
 		Global.laser_amount+=5
 	if	type == 'grenade':
 		Global.grenade_amount+=1
+	if type == 'health':
+		Global.health+=10
 	update_stat.emit()	
 	

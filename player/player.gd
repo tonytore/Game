@@ -14,7 +14,7 @@ var can_grenade:bool = true
 
 func _physics_process(_delta):
 	
-	var direction = Input.get_vector("left","right","up","down").normalized()
+	var direction = Input.get_vector("left","right","up","down")
 	velocity = direction * 500
 	move_and_slide()
 	Global.player_pos = global_position

@@ -2,15 +2,15 @@ extends CharacterBody2D
 
 var player_nearby:bool = false
 var can_laser:bool = true
-var right_gun_use:bool = true
+#var right_gun_use:bool = true
 signal  laser(pos,direction)
 
 func _process(_delta):
 	if player_nearby:
 		look_at(Global.player_pos)
 		if can_laser:
-			var marker_node = $LaserSpawnPosition.get_child(right_gun_use)
-			right_gun_use = not right_gun_use
+			var marker_node = $LaserSpawnPosition.get_child(1)
+#			right_gun_use = not right_gun_use
 			var pos : Vector2 = marker_node.global_position
 			var direction: Vector2 = (Global.player_pos - position).normalized()
 			laser.emit(pos,direction)

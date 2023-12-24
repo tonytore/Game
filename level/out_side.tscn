@@ -132,7 +132,7 @@ position = Vector2(266, -29)
 position = Vector2(1379, 832)
 rotation = 1.5708
 
-[node name="Toilets" parent="." index="3" groups=["container"] instance=ExtResource("12_frgcs")]
+[node name="Toilets" parent="." index="3" instance=ExtResource("12_frgcs")]
 position = Vector2(-100, 923)
 rotation = 1.5708
 

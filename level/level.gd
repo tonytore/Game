@@ -6,6 +6,7 @@ var grenade_scene:PackedScene = preload("res://scene/projectile/grenade.tscn")
 var item_scene:PackedScene = preload("res://scene/item/items.tscn")
 
 func _ready():
+	
 	for container in get_tree().get_nodes_in_group('Container'):  
 		container.connect("open",_on_container_opened)
 		

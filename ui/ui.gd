@@ -11,10 +11,8 @@ var red:Color = Color("8f0003")
 
 
 func _ready():
-	Global.connect("health_change",update_health_text)
-	update_laser_text()
-	update_grenade_text()
-	update_health_text()
+	Global.connect("stat_change",update_stat_text)
+	update_stat_text()
 	
 	
 
@@ -28,7 +26,12 @@ func update_grenade_text():
 
 func update_health_text():
 	health_bar.value = Global.health
-	
+
+func update_stat_text():
+	update_laser_text()
+	update_grenade_text()
+	update_health_text()
+
 func update_color(amount:int,label:Label,icon:TextureRect):
 	if amount == 0 :
 		label.modulate = red

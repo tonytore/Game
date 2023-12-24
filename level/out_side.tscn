@@ -11,9 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://2lrpclfs7p5p" path="res://scene/object/house.tscn" id="7_qbtnp"]
 [ext_resource type="PackedScene" uid="uid://1a01fm5xrgbn" path="res://scene/object/steam_ventilation.tscn" id="8_0aykd"]
 [ext_resource type="PackedScene" uid="uid://lpkwnniu8hj0" path="res://scene/object/fan_animation.tscn" id="9_esga6"]
-[ext_resource type="PackedScene" uid="uid://clgq8kpsqepe2" path="res://scene/level/toilats.tscn" id="12_aefj6"]
-[ext_resource type="PackedScene" uid="uid://b24ujdd7s1aa0" path="res://scene/level/box.tscn" id="13_h4wg0"]
-[ext_resource type="PackedScene" uid="uid://cp6eyumhxcqwe" path="res://scene/item/items.tscn" id="14_ixvvk"]
+[ext_resource type="PackedScene" uid="uid://dgvon2vlel3rm" path="res://scene/container/toilets.tscn" id="12_frgcs"]
+[ext_resource type="PackedScene" uid="uid://c501ef50qk6ko" path="res://scene/container/crates.tscn" id="13_eexd3"]
+[ext_resource type="PackedScene" uid="uid://n6xjkrgt78j" path="res://scene/enemy/scout.tscn" id="14_oqtd3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dfvqo"]
 resource_name = "walls"
@@ -49,10 +49,8 @@ sources/0 = SubResource("TileSetAtlasSource_dfvqo")
 sources/2 = SubResource("TileSetAtlasSource_40o5l")
 
 [node name="OutSide" instance=ExtResource("1_q4xuk")]
+position = Vector2(245, 133)
 script = ExtResource("2_7h2ae")
-
-[node name="Ground" parent="." index="0"]
-metadata/_edit_lock_ = true
 
 [node name="Soil" type="Sprite2D" parent="Ground" index="0"]
 texture_repeat = 2
@@ -70,6 +68,7 @@ scale = Vector2(1.46582, 1.6297)
 texture = ExtResource("3_0g2jp")
 
 [node name="TileMap" type="TileMap" parent="Ground" index="2"]
+position = Vector2(245, 133)
 tile_set = SubResource("TileSet_p68cc")
 format = 2
 layer_0/name = "soil"
@@ -119,7 +118,6 @@ texture = ExtResource("6_swiix")
 [node name="House" parent="Ground" index="8" instance=ExtResource("7_qbtnp")]
 position = Vector2(-28, 2557)
 rotation = -2.89899
-metadata/_edit_lock_ = true
 
 [node name="SteamVentilation" parent="Ground" index="9" instance=ExtResource("8_0aykd")]
 position = Vector2(-166, 497)
@@ -128,15 +126,19 @@ position = Vector2(-166, 497)
 position = Vector2(-815, 2348)
 
 [node name="Gate" parent="." index="1" instance=ExtResource("2_01uvm")]
-metadata/_edit_lock_ = true
+position = Vector2(266, -29)
 
-[node name="Toilet" parent="." index="2" instance=ExtResource("12_aefj6")]
-position = Vector2(1032, 818)
+[node name="Crates" parent="." index="2" groups=["container"] instance=ExtResource("13_eexd3")]
+position = Vector2(1379, 832)
+rotation = 1.5708
 
-[node name="Box" parent="." index="3" instance=ExtResource("13_h4wg0")]
-position = Vector2(1470, 561)
+[node name="Toilets" parent="." index="3" groups=["container"] instance=ExtResource("12_frgcs")]
+position = Vector2(-100, 923)
+rotation = 1.5708
 
-[node name="Items" parent="." index="7" instance=ExtResource("14_ixvvk")]
-position = Vector2(337, 554)
+[node name="Scout" parent="Enemy" index="0" instance=ExtResource("14_oqtd3")]
+position = Vector2(966, 1294)
 
+[connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]
+[connection signal="player_out" from="Ground/House" to="." method="_on_house_player_out"]
 [connection signal="player_crossed_gate" from="Gate" to="." method="_on_gate_player_crossed_gate"]

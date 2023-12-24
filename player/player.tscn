@@ -10,10 +10,10 @@ radius = 66.6875
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_doyp1"]
 lifetime_randomness = 0.2
 particle_flag_disable_z = true
-spread = 20.0
+spread = 10.0
 gravity = Vector3(0, 0, 0)
-initial_velocity_min = 15000.0
-initial_velocity_max = 20000.0
+initial_velocity_min = 80.0
+initial_velocity_max = 200.0
 orbit_velocity_min = 0.0
 orbit_velocity_max = 0.0
 scale_min = 0.3
@@ -68,6 +68,7 @@ position = Vector2(303.332, -370.001)
 emitting = false
 process_material = SubResource("ParticleProcessMaterial_doyp1")
 texture = ExtResource("3_jrlrn")
+lifetime = 0.5
 one_shot = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]

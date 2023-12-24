@@ -230,10 +230,6 @@ rotation = 1.5708
 scale = Vector2(6.4482, 11.4353)
 texture = ExtResource("4_1k63r")
 
-[node name="Player" parent="." index="2"]
-position = Vector2(7328, 2528)
-rotation = 1.5708
-
 [node name="Node2D" type="Area2D" parent="." index="3"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D" index="0"]
@@ -241,12 +237,8 @@ position = Vector2(9116, 2542.75)
 shape = SubResource("RectangleShape2D_h63eu")
 
 [node name="Light" type="Node2D" parent="." index="4"]
-metadata/_edit_lock_ = true
-metadata/_edit_group_ = true
 
 [node name="FanAnimation" parent="Light" index="0" instance=ExtResource("4_sa8x3")]
-visible = false
-modulate = Color(1, 1, 1, 0.368627)
 position = Vector2(8504, 2552)
 scale = Vector2(2, 2)
 
@@ -335,8 +327,13 @@ position = Vector2(-2240, 1480)
 rotation = -1.5708
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="5"]
-color = Color(0.556863, 0.498039, 0, 0.682353)
+color = Color(0, 0.0156863, 0.00784314, 0.682353)
+energy = 1.42
 blend_mode = 1
+
+[node name="Player" parent="." index="6"]
+position = Vector2(7328, 2528)
+rotation = 1.5708
 
 [node name="Items" parent="." index="7" instance=ExtResource("9_6lacu")]
 position = Vector2(6648, 1352)

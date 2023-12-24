@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://3bo5mb5fop1i" path="res://scene/object/wall_lights.tscn" id="3_laljk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w06bg"]
-size = Vector2(3362, 2226)
+size = Vector2(3350, 2246)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_wvy0d"]
 polygon = PackedVector2Array(174, 88, 174, -84, 195, -80, 195, 76)
@@ -292,7 +292,7 @@ collision_layer = 16
 script = ExtResource("1_qpdrg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1033, -487)
+position = Vector2(1039, -496.998)
 rotation = -3.14159
 shape = SubResource("RectangleShape2D_w06bg")
 
@@ -316,6 +316,11 @@ layer_2/y_sort_enabled = false
 layer_2/y_sort_origin = 0
 layer_2/z_index = 0
 layer_2/tile_data = PackedInt32Array(-65532, 65536, 7, 65539, 0, 6, 65540, 0, 6, 65541, 0, 6, 65542, 0, 6, 131074, 0, 6, 131075, 0, 6, 131076, 65536, 8, 131078, 0, 6, 131079, 0, 6, 131080, 65536, 8, 65544, 0, 7, -65529, 0, 7, 7, 0, 8, 8, 0, 6, 4, 65536, 8, 3, 0, 6, 2, 0, 7)
+
+[node name="WallLights3" parent="CollisionShape2D" instance=ExtResource("3_laljk")]
+position = Vector2(1465, -598.004)
+scale = Vector2(0.6, 0.6)
+metadata/_edit_lock_ = true
 
 [node name="SimpleLight" parent="." instance=ExtResource("2_y2ds7")]
 position = Vector2(2505, -782)
@@ -378,25 +383,16 @@ rotation = 3.14159
 position = Vector2(2000, 287)
 rotation = 1.5708
 scale = Vector2(0.6, 0.6)
-metadata/_edit_lock_ = true
 
 [node name="WallLights2" parent="." instance=ExtResource("3_laljk")]
 position = Vector2(31, -1385)
 rotation = -1.5708
 scale = Vector2(0.6, 0.6)
-metadata/_edit_lock_ = true
 
 [node name="WallLights4" parent="." instance=ExtResource("3_laljk")]
-position = Vector2(1200, -1445)
+position = Vector2(1096, -1397)
 rotation = -1.5708
 scale = Vector2(0.6, 0.6)
-metadata/_edit_lock_ = true
-
-[node name="WallLights3" parent="." instance=ExtResource("3_laljk")]
-position = Vector2(-432, 111)
-rotation = 3.14159
-scale = Vector2(0.6, 0.6)
-metadata/_edit_lock_ = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

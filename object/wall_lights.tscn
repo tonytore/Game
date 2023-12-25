@@ -31,7 +31,7 @@ energy = 1.19
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 0.419608)
 shadow_filter = 1
-shadow_filter_smooth = 2.6
+shadow_filter_smooth = 26.9
 texture = ExtResource("2_poair")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]

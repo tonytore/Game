@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://crvtiwgg6d0gl"]
+[gd_scene load_steps=15 format=3 uid="uid://crvtiwgg6d0gl"]
 
 [ext_resource type="PackedScene" uid="uid://c6ssjhge781mg" path="res://scene/level/level.tscn" id="1_ppivf"]
 [ext_resource type="Texture2D" uid="uid://djfq3s52kwwu0" path="res://graphics/tilesets/interior.png" id="2_dn2jy"]
@@ -6,9 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://djv8vudb0d8d1" path="res://graphics/ground/dirt.png" id="3_tm80k"]
 [ext_resource type="Texture2D" uid="uid://dgpgsl7hdjjwi" path="res://graphics/lights/overlays/infrastructure.png" id="4_1k63r"]
 [ext_resource type="PackedScene" uid="uid://lpkwnniu8hj0" path="res://scene/object/fan_animation.tscn" id="4_sa8x3"]
+[ext_resource type="PackedScene" uid="uid://c501ef50qk6ko" path="res://scene/container/crates.tscn" id="6_4sn2k"]
 [ext_resource type="PackedScene" uid="uid://3bo5mb5fop1i" path="res://scene/object/wall_lights.tscn" id="6_x3k86"]
+[ext_resource type="PackedScene" uid="uid://dgvon2vlel3rm" path="res://scene/container/toilets.tscn" id="7_rp6s7"]
 [ext_resource type="PackedScene" uid="uid://72bj5fhhvryb" path="res://scene/object/simple_light.tscn" id="8_nr851"]
-[ext_resource type="PackedScene" uid="uid://cp6eyumhxcqwe" path="res://scene/item/items.tscn" id="9_6lacu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mwl7o"]
 texture = ExtResource("2_dn2jy")
@@ -230,6 +231,48 @@ rotation = 1.5708
 scale = Vector2(6.4482, 11.4353)
 texture = ExtResource("4_1k63r")
 
+[node name="Crates" parent="Ground" index="4" instance=ExtResource("6_4sn2k")]
+position = Vector2(-400, -16)
+
+[node name="Crates4" parent="Ground" index="5" instance=ExtResource("6_4sn2k")]
+position = Vector2(-4080, 1544)
+
+[node name="Crates5" parent="Ground" index="6" instance=ExtResource("6_4sn2k")]
+position = Vector2(-2800, 4312)
+rotation = 3.14159
+
+[node name="Crates6" parent="Ground" index="7" instance=ExtResource("6_4sn2k")]
+position = Vector2(4896, 3888)
+rotation = 3.14159
+
+[node name="Crates7" parent="Ground" index="8" instance=ExtResource("6_4sn2k")]
+position = Vector2(2744, 6248)
+rotation = 3.14159
+
+[node name="Crates2" parent="Ground" index="9" instance=ExtResource("6_4sn2k")]
+position = Vector2(-1192, 144)
+rotation = -1.5708
+
+[node name="Crates3" parent="Ground" index="10" instance=ExtResource("6_4sn2k")]
+position = Vector2(-5432, 4128)
+rotation = -1.5708
+
+[node name="Toilets" parent="Ground" index="11" instance=ExtResource("7_rp6s7")]
+
+[node name="Toilets2" parent="Ground" index="12" instance=ExtResource("7_rp6s7")]
+position = Vector2(5328, 128)
+
+[node name="Toilets3" parent="Ground" index="13" instance=ExtResource("7_rp6s7")]
+position = Vector2(-5288, 1696)
+
+[node name="Toilets4" parent="Ground" index="14" instance=ExtResource("7_rp6s7")]
+position = Vector2(3152, 8968)
+rotation = 3.14159
+
+[node name="Toilets5" parent="Ground" index="15" instance=ExtResource("7_rp6s7")]
+position = Vector2(-1176, 8984)
+rotation = 3.14159
+
 [node name="Node2D" type="Area2D" parent="." index="3"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D" index="0"]
@@ -247,6 +290,7 @@ position = Vector2(1752, 7912)
 scale = Vector2(2, 2)
 
 [node name="FanAnimation5" parent="Light" index="2" instance=ExtResource("4_sa8x3")]
+texture_filter = 1
 position = Vector2(32, 3472)
 scale = Vector2(2, 2)
 
@@ -259,6 +303,8 @@ position = Vector2(-4192, 2560)
 scale = Vector2(2, 2)
 
 [node name="WallLights" parent="Light" index="5" instance=ExtResource("6_x3k86")]
+texture_filter = 1
+texture_repeat = 2
 position = Vector2(3424, 3288)
 physics_material_override = SubResource("PhysicsMaterial_vrm4d")
 
@@ -286,56 +332,53 @@ physics_material_override = SubResource("PhysicsMaterial_vrm4d")
 position = Vector2(888, 4960)
 physics_material_override = SubResource("PhysicsMaterial_vrm4d")
 
-[node name="WallLights7" parent="Light" index="11" instance=ExtResource("6_x3k86")]
-position = Vector2(872, 7376)
-physics_material_override = SubResource("PhysicsMaterial_vrm4d")
-
-[node name="SimpleLight" parent="Light" index="12" instance=ExtResource("8_nr851")]
+[node name="SimpleLight" parent="Light" index="11" instance=ExtResource("8_nr851")]
 position = Vector2(-3472, 1496)
 rotation = -1.5708
 
-[node name="SimpleLight3" parent="Light" index="13" instance=ExtResource("8_nr851")]
+[node name="SimpleLight3" parent="Light" index="12" instance=ExtResource("8_nr851")]
 position = Vector2(-4712, 1488)
 rotation = -1.5708
 
-[node name="SimpleLight6" parent="Light" index="14" instance=ExtResource("8_nr851")]
+[node name="SimpleLight6" parent="Light" index="13" instance=ExtResource("8_nr851")]
 position = Vector2(-4832, 2872)
 rotation = 1.5708
 
-[node name="SimpleLight7" parent="Light" index="15" instance=ExtResource("8_nr851")]
+[node name="SimpleLight7" parent="Light" index="14" instance=ExtResource("8_nr851")]
 position = Vector2(-3664, 2880)
 rotation = 1.5708
 
-[node name="SimpleLight8" parent="Light" index="16" instance=ExtResource("8_nr851")]
+[node name="SimpleLight8" parent="Light" index="15" instance=ExtResource("8_nr851")]
 position = Vector2(-504, 3256)
 rotation = 1.5708
 
-[node name="SimpleLight9" parent="Light" index="17" instance=ExtResource("8_nr851")]
+[node name="SimpleLight9" parent="Light" index="16" instance=ExtResource("8_nr851")]
 position = Vector2(-1336, 3736)
 rotation = 3.14159
 
-[node name="SimpleLight4" parent="Light" index="18" instance=ExtResource("8_nr851")]
+[node name="SimpleLight4" parent="Light" index="17" instance=ExtResource("8_nr851")]
 position = Vector2(-784, -128)
 rotation = -1.5708
 
-[node name="SimpleLight5" parent="Light" index="19" instance=ExtResource("8_nr851")]
+[node name="SimpleLight5" parent="Light" index="18" instance=ExtResource("8_nr851")]
 position = Vector2(1024, -88)
 rotation = -1.5708
 
-[node name="SimpleLight2" parent="Light" index="20" instance=ExtResource("8_nr851")]
+[node name="SimpleLight2" parent="Light" index="19" instance=ExtResource("8_nr851")]
 position = Vector2(-2240, 1480)
 rotation = -1.5708
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="5"]
-color = Color(0, 0.0156863, 0.00784314, 0.682353)
-energy = 1.42
+position = Vector2(360, 312)
+color = Color(0, 0.0156863, 0.0705882, 1)
+energy = 8.93
 blend_mode = 1
 
-[node name="Player" parent="." index="6"]
+[node name="Enemy" parent="." index="6"]
+position = Vector2(-176, 536)
+
+[node name="Player" parent="." index="7"]
 position = Vector2(7328, 2528)
 rotation = 1.5708
-
-[node name="Items" parent="." index="7" instance=ExtResource("9_6lacu")]
-position = Vector2(6648, 1352)
 
 [connection signal="body_entered" from="Node2D" to="." method="_on_node_2d_body_entered"]

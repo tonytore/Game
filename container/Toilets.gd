@@ -4,6 +4,6 @@ func hit():
 	if not opened:
 		$LidSprite.hide()
 #		$AudioStreamPlayer2D.play()
-		var pos = $SpawnPosition.get_child(randi()%$SpawnPosition.get_child_count()).global_position
+		var pos = $SpawnPosition/Marker2D.global_position
 		open.emit(pos, current_direction)
 		opened = true

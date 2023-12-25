@@ -5,9 +5,12 @@ var can_laser:bool = true
 var right_gun_use:bool = true
 signal  laser(pos,direction)
 
+var health:int = 30
 
 func hit():
-	print('scout was hit')
+	health-=10
+	if health<=0:
+		queue_free()
 	
 func _process(_delta):
 	if player_nearby:
@@ -21,7 +24,7 @@ func _process(_delta):
 			can_laser = false
 			$LaserCoolDown.start()
 
-
+ 
 func _on_attack_area_body_entered(_body):
 	player_nearby = true
 

@@ -10,7 +10,8 @@ var can_grenade:bool = true
 
 
 
-
+func hit():
+	print('player was hit')
 
 func _physics_process(_delta):
 	

@@ -17,3 +17,6 @@ func _process(_delta):
 			if "hit" in target and in_range:
 				target.hit() 
 	
+
+
+

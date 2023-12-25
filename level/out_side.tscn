@@ -129,12 +129,12 @@ position = Vector2(-815, 2348)
 position = Vector2(266, -29)
 
 [node name="Crates" parent="." index="2" groups=["container"] instance=ExtResource("13_eexd3")]
-position = Vector2(1379, 832)
-rotation = 1.5708
+position = Vector2(2421, 204)
+rotation = 3.14159
 
 [node name="Toilets" parent="." index="3" instance=ExtResource("12_frgcs")]
-position = Vector2(-100, 923)
-rotation = 1.5708
+position = Vector2(-614, 129)
+rotation = 3.14159
 
 [node name="Scout" parent="Enemy" index="0" instance=ExtResource("14_oqtd3")]
 position = Vector2(966, 1294)

@@ -33,4 +33,7 @@ func _on_body_entered(_body):
 		Global.grenade_amount+=1
 	if type == 'health':
 		Global.health+=10
+	$AudioStreamPlayer2D.play()
+	$Sprite2D.hide()
+	await $AudioStreamPlayer2D.finished
 	queue_free()

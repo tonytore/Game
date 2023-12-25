@@ -12,7 +12,7 @@ var red:Color = Color("8f0003")
 
 func _ready():
 	Global.connect("stat_change",update_stat_text)
-	update_stat_text()
+	update_stat_text() 
 	
 	
 

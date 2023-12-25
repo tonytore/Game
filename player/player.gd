@@ -11,7 +11,8 @@ var can_grenade:bool = true
 
 
 func hit():
-	print('player was hit')
+	Global.health-=10
+	
 
 func _physics_process(_delta):
 	
